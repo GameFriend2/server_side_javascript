@@ -1,5 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var multer = require('multer');
+var fs = require('fs');
 var app = express();
 var time = Date();
 
@@ -8,6 +10,13 @@ app.set('view engine', 'jade');
 app.set('views', './views');
 app.use(express.static('public'));
 app.use(bodyParser.urlencoded({ extended: false}));
+
+app.post('/upload', function(req, res){
+  res.send('Uploaded');
+});
+app.get('/upload', function(req, res){
+  res.render('upload');
+});
 
 app.get('/', function(req, res) {
   res.send('hello world');
