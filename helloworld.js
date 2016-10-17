@@ -4,15 +4,26 @@ var multer = require('multer');
 var fs = require('fs');
 var app = express();
 var time = Date();
+var _storage = multer.diskStorage({
+  destination: function(req, file, cb){
+    cb(null, 'uploads/');
+  },
+  filename: function(req, file, cb){
+    cb(null, file.originalname);
+  }
+});
+var upload = multer({ storage: _storage });
 
 app.locals.pretty = true;
 app.set('view engine', 'jade');
 app.set('views', './views');
 app.use(express.static('public'));
+app.use('/user', express.static('uploads'));
 app.use(bodyParser.urlencoded({ extended: false}));
 
-app.post('/upload', function(req, res){
-  res.send('Uploaded');
+app.post('/upload', upload.single('userfile'), function(req, res){
+  console.log(req.file);
+  res.send('Uploaded :' +req.file.originalname);
 });
 app.get('/upload', function(req, res){
   res.render('upload');
