@@ -20,7 +20,6 @@ app.set('views', './views');
 app.use(express.static('public'));
 app.use('/user', express.static('uploads'));
 app.use(bodyParser.urlencoded({ extended: false}));
-
 app.post('/upload', upload.single('userfile'), function(req, res){
   console.log(req.file);
   res.send('Uploaded :' +req.file.originalname);
