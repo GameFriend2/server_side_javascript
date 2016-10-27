@@ -2,7 +2,7 @@ var express = require('express');
 var bodyParser = require('body-parser');
 var app = express();
 var fs = require('fs');
-var mysql      = require('mysql');
+var mysql = require('mysql');
 var conn= mysql.createConnection({
   host     : 'localhost',
   user     : 'root',
