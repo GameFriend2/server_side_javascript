@@ -1,7 +1,6 @@
 {
   "name": "server_side_javascript",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,5 +17,14 @@
     "node-mysql": "^0.4.2",
     "orientjs": "^2.2.2",
     "supervisor": "^0.11.0"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GameFriend2/server_side_javascript.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GameFriend2/server_side_javascript/issues"
+  },
+  "homepage": "https://github.com/GameFriend2/server_side_javascript#readme",
+  "description": ""
 }
